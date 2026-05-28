@@ -347,9 +347,11 @@ def build_pdf(output_path):
         ('09', 'Estrategia de Entrada al Mercado', 'Canales, posicionamiento, pricing, go-to-market'),
         ('10', 'Plan de Marketing Digital', 'Instagram, TikTok, influencers, e-commerce'),
         ('11', 'Proyecciones Financieras', 'Inversión, revenue, ROI, punto de equilibrio'),
+        ('02B', 'Longevity Coffee — El Producto Estrella', 'Análisis profundo del 10-in-1 y su potencial en Venezuela'),
         ('12', 'Hoja de Ruta 2026–2028', 'Cronograma de implementación fase a fase'),
         ('13', 'Riesgos & Mitigaciones', 'Escenarios y planes de contingencia'),
         ('14', 'Conclusiones & Próximos Pasos', 'Acciones inmediatas para empezar'),
+        ('15', 'Veredicto Final — ¿Vale la Pena?', 'Resumen ejecutivo definitivo y decisión de inversión'),
     ]
 
     for num, title, desc in toc:
@@ -469,6 +471,7 @@ def build_pdf(output_path):
         ['Cistanche Tubulosa + Tongkat Ali', 'Cistanche tubulosa + Tongkat Ali', '$45–$65', 'Energía + libido + longevidad'],
         ['NMN (Nicotinamide Mononucleotide)', 'NMN alta pureza', '$45–$70', 'Anti-envejecimiento + NAD+'],
         ['Akkermansia Muciniphila', 'Akkermansia muciniphila', '$50–$80', 'Microbioma + salud intestinal'],
+        ['LONGEVITY COFFEE 10-in-1 ★', 'NMN+Glutatión+TMG+Mg+D3+K2+B12+C+Cocoa+Café', '$49–$55', 'Café de longevidad diario — PRODUCTO ESTRELLA'],
         ['Ultimate Black Scout Bundle', 'Stack completo multi-producto', '$167.02 (desc.)', 'Pack de transformación total'],
     ]
     story.append(dark_table(products_data,
@@ -499,6 +502,149 @@ def build_pdf(output_path):
         'Precio: premium mid-range (más económico que marcas ultra-premium pero mejor calidad '
         'que marcas masivas). TrustScore en Trustpilot: 3.8/5 con 182 reseñas.',
         S['body']))
+
+    story.append(PageBreak())
+
+    # ══════════════════════════════════════════════════════════════════════════
+    # 02B — LONGEVITY COFFEE
+    # ══════════════════════════════════════════════════════════════════════════
+    story.append(SectionDivider('02B  |  LONGEVITY COFFEE — EL PRODUCTO ESTRELLA', ACCENT_GOLD))
+    story.append(Spacer(1, 0.3*cm))
+
+    story.append(Paragraph('¿Qué es el Longevity Coffee 10-in-1?', S['h2']))
+    story.append(Paragraph(
+        'El Black Forest Longevity Mix Mocha Coffee 10-in-1 no es un café y tampoco es solo un '
+        'suplemento — es ambos a la vez. Un scoop al día reemplaza tu café de la mañana y te '
+        'entrega 10 ingredientes clínicamente estudiados para energía, enfoque y renovación celular. '
+        'Es el primer producto de su tipo disponible en el mercado global y no existe nada comparable '
+        'actualmente en Venezuela.',
+        S['body']))
+
+    story.append(Paragraph('Composición Completa por Porción (1 scoop — 30 porciones/envase)', S['h2']))
+
+    ingredients_data = [
+        ['INGREDIENTE', 'DOSIS', 'FUNCIÓN', 'POR QUÉ IMPORTA'],
+        ['NMN (Nicotinamide Mononucleotide)', '250mg', 'Precursor NAD+ — energía celular', 'Sube el NAD+ que cae con la edad. Favorito de biohackers globales.'],
+        ['A-Acetil Glutatión', '250mg', 'Antioxidante maestro del cuerpo', 'Forma más biodisponible del glutatión. Combate el estrés oxidativo.'],
+        ['TMG (Trimetilglicina)', '250mg', 'Protector del ADN + hígado', 'Apoya la metilación. Esencial cuando se toma NMN.'],
+        ['Magnesio Glicinato', '100mg', 'Músculos, sueño, nervios', 'Forma más absorbible de magnesio. Sin el efecto laxante.'],
+        ['Vitamina C', '250mg', 'Inmunidad + colágeno + antioxidante', 'Potencia el efecto del glutatión. Sinergia comprobada.'],
+        ['Vitamina D3', '2,670 IU', 'Huesos, inmunidad, testosterona', 'El 70% de latinoamericanos tiene deficiencia de D3.'],
+        ['Vitamina K2 (MK-7)', '200mcg', 'Corazón, calcificación arterial', 'Dirige el calcio a los huesos, no a las arterias.'],
+        ['B12 Metilcobalamina', '267mcg', 'Energía, sistema nervioso, ánimo', 'Forma activa. Superior a la cianocobalamina común.'],
+        ['Cocoa Premium (polifenol alto)', '8,000mg', 'Óxido nítrico, corazón, antioxidantes', '10x más concentrado que cacao regular. Epicatequina para músculos.'],
+        ['Café instantáneo', '~90mg cafeína', 'Energía limpia + foco mental', 'La teobromina del cacao complementa la cafeína: energía sin crash.'],
+    ]
+    story.append(dark_table(ingredients_data, [4.2*cm, 1.8*cm, 3.5*cm, W-9.5*cm]))
+
+    story.append(Spacer(1, 0.3*cm))
+
+    story.append(Paragraph('Datos del Producto', S['h2']))
+    product_specs = [
+        ['ESPECIFICACIÓN', 'DETALLE'],
+        ['Formato', 'Polvo sabor Mocha — mezclar en agua caliente o fría, leche, o leche vegetal'],
+        ['Porciones por envase', '30 (1 mes de suministro)'],
+        ['Precio retail USA', '~$49–55 USD ($1.67/día)'],
+        ['Calorías por porción', 'Mínimas — sin azúcar, sin GMO, apto vegano, sin gluten'],
+        ['Sabor', 'Mocha (café con chocolate) — más cacao que café según reseñas'],
+        ['Disponibilidad', 'blackforestsupplements.com / Amazon USA / TikTok Shop USA'],
+        ['Amazon ASIN', 'B0GD2F7Q46'],
+        ['Certificaciones', 'Sin gluten, Sin GMO, Vegano'],
+        ['Precio por día', '$1.67 USD — equivale a un café en Caracas'],
+    ]
+    story.append(dark_table(product_specs, [4.5*cm, W-4.5*cm]))
+
+    story.append(Spacer(1, 0.3*cm))
+    story.append(Paragraph('El Mercado Global de Longevidad: Contexto', S['h2']))
+    story.append(Paragraph(
+        'El Longevity Coffee no es un capricho — está montado sobre una mega-tendencia global. '
+        'El mercado de suplementos NAD/NMN creció de nicho a categoría mainstream entre 2020–2025, '
+        'alcanzando $876M USD en demanda global en 2025. Celebrities, atletas, médicos antienvejecimiento '
+        'y biohackers de todo el mundo hablan de NMN diariamente. La pregunta no es si esta tendencia '
+        'llegará a Venezuela — es cuándo. Y quien esté posicionado cuando llegue, gana el mercado.',
+        S['body']))
+
+    longevity_market = [
+        ['DATO DE MERCADO LONGEVIDAD', 'CIFRA', 'FUENTE'],
+        ['Mercado NAD/NMN global 2025', '$876M USD', 'Future Market Insights'],
+        ['CAGR proyectado longevity ingredients', 'Doble dígito anual', 'MarketsandMarkets'],
+        ['Tendencia cellular health 2025+', '"Next big trend in ageless consumption"', 'NutraIngredients 2025'],
+        ['Adopción biohacking jóvenes 25–40', 'Mayor segmento de crecimiento', 'Rolling Stone / Gabelli'],
+        ['NMN en Rolling Stone, Time, Forbes', 'Cobertura mainstream masiva', 'Publicaciones 2024–2026'],
+        ['Venezuela: penetración actual', '~0% (mercado virgen)', 'Análisis propio 2026'],
+    ]
+    story.append(dark_table(longevity_market, [5.5*cm, 3.5*cm, W-9*cm]))
+
+    story.append(Spacer(1, 0.3*cm))
+    story.append(Paragraph('Por Qué el Longevity Coffee es el Producto #1 para Venezuela', S['h2']))
+
+    lc_reasons = [
+        ('RAZÓN 1: EL CAFÉ ES CULTURA VENEZOLANA', ACCENT_GOLD,
+         'Venezuela es uno de los países con mayor consumo de café per cápita de LATAM. '
+         'El venezolano toma café 3–5 veces al día. Vender salud dentro del café que ya '
+         'toma es el ángulo de venta más natural e irresistible posible. No le pides que '
+         'cambie su hábito — lo mejoras.'),
+        ('RAZÓN 2: $1.67/DÍA ES EL UMBRAL DE DECISIÓN FÁCIL', ACCENT_GREEN,
+         'Para el target de BFS en Venezuela ($500+/mes), $1.67/día representa el 0.1% '
+         'de su ingreso. Es lo mismo que pagar un café en Caracas. Pero lo que recibe '
+         'a cambio son 10 ingredientes premium de longevidad. La relación valor-precio '
+         'es incomparable — y ese es el argumento de venta que cierra solo.'),
+        ('RAZÓN 3: CONTENIDO VIRAL GARANTIZADO', BLUE_ACCENT,
+         '"Reemplacé mi café de la mañana por esto durante 30 días y esto pasó." '
+         'Ese es el video de TikTok e Instagram que se hace viral. El formato before/after '
+         'de longevity + energía + foco es el contenido más compartido en redes fitness. '
+         'El producto se vende a sí mismo con un solo video honesto.'),
+        ('RAZÓN 4: CERO COMPETENCIA DIRECTA EN VENEZUELA', RED_ALERT,
+         'No existe ningún producto similar en Venezuela. Ningún café + NMN + Glutatión + '
+         '8 vitaminas en un scoop. Si entras con el Longevity Coffee, eres ÚNICO en el '
+         'mercado. La ventaja del primer movedor en un nicho emergente es enorme — '
+         'los consumidores que adoptan primero se convierten en evangelizadores de marca.'),
+        ('RAZÓN 5: SEGUNDO SEGMENTO DE CLIENTE — MUJERES 30–50', PURPLE,
+         'El Longevity Coffee tiene un segundo segmento naturalísimo: mujeres venezolanas '
+         'de 30–50 años interesadas en anti-envejecimiento, piel, energía y bienestar. '
+         'El NMN + Glutatión + Vitamina C es el stack de belleza interna que ya buscan '
+         'pero no encuentran en Venezuela. Doble mercado con el mismo producto.'),
+    ]
+
+    for label, color, text in lc_reasons:
+        row = [[
+            Paragraph(f'<font color="#{color.hexval()[2:]}"><b>{label}</b></font>', S['h3']),
+            Paragraph(text, S['body'])
+        ]]
+        t = Table(row, colWidths=[4.5*cm, W-4.5*cm])
+        t.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
+            ('TOPPADDING', (0,0), (-1,-1), 8),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 8),
+            ('LEFTPADDING', (0,0), (-1,-1), 10),
+            ('RIGHTPADDING', (0,0), (-1,-1), 10),
+            ('BOX', (0,0), (-1,-1), 1, color),
+            ('VALIGN', (0,0), (-1,-1), 'TOP'),
+        ]))
+        story.append(t)
+        story.append(Spacer(1, 4))
+
+    story.append(Spacer(1, 0.3*cm))
+    story.append(Paragraph('Estrategia de Lanzamiento Específica para el Longevity Coffee', S['h2']))
+
+    lc_launch = [
+        ['FASE', 'ACCIÓN', 'RESULTADO ESPERADO'],
+        ['Semana 1–2', 'Enviar 5 unidades a influencers fitness venezolanos (Chuyst, Marly Valera, Laura Fuentes)', 'Primeros reviews honestos en stories'],
+        ['Semana 3', 'Video propio: "30 días tomando este café — mi experiencia honesta"', 'Contenido anchor del canal'],
+        ['Mes 1', 'Primer batch de 20–30 unidades por casillero desde Miami', 'Stock de lanzamiento $1,000–1,650'],
+        ['Mes 1–2', 'Stories diarias: el café de la mañana + resultados + educación NMN/glutatión', 'Comunidad inicial 500–2,000 seguidores'],
+        ['Mes 2', 'Bundle: Longevity Coffee + Turkesterone para hombres / Coffee + NMN cáps para mujeres', 'Ticket promedio sube de $50 a $100+'],
+        ['Mes 3+', 'Programa de afiliados: coaches de bienestar y entrenadores reciben $10 por venta', 'Red de 20–50 vendedores activos'],
+    ]
+    story.append(dark_table(lc_launch, [2.5*cm, 6*cm, W-8.5*cm]))
+
+    story.append(Spacer(1, 0.2*cm))
+    story.append(Paragraph(
+        '☕ EL LONGEVITY COFFEE ES EL CABALLO DE TROYA: Es el producto que rompe la barrera '
+        'de entrada con menor fricción (todo el mundo entiende "mejor café de la mañana"). '
+        'Una vez dentro del ecosistema BFS, el cliente sube a Turkesterona, NMN, Akkermansia '
+        '— el lifetime value del cliente se multiplica x3–5.',
+        S['highlight']))
 
     story.append(PageBreak())
 
@@ -1272,6 +1418,141 @@ def build_pdf(output_path):
     story.append(PageBreak())
 
     # ══════════════════════════════════════════════════════════════════════════
+    # 15 — VEREDICTO FINAL
+    # ══════════════════════════════════════════════════════════════════════════
+    story.append(SectionDivider('15  |  VEREDICTO FINAL — ¿VALE LA PENA TRAER BFS A VENEZUELA?', ACCENT_GOLD))
+    story.append(Spacer(1, 0.3*cm))
+
+    story.append(Paragraph('Resumen Ejecutivo Definitivo', S['h1']))
+    story.append(Paragraph(
+        'Después de analizar la marca, el mercado, la competencia, la regulación, los canales, '
+        'la logística, las finanzas y el contexto macroeconómico venezolano, la respuesta es clara:',
+        S['body']))
+
+    story.append(Spacer(1, 0.3*cm))
+    story.append(Paragraph('SÍ. VALE LA PENA. Y AQUÍ ESTÁN LOS DATOS QUE LO PRUEBAN.', S['h2']))
+    story.append(HRFlowable(width=W, thickness=2, color=ACCENT_GOLD, spaceAfter=0.3*cm))
+
+    story.append(Paragraph('Los 5 Argumentos Definitivos', S['h2']))
+
+    verdicts = [
+        ('1. TIMING PERFECTO — LA VENTANA ESTÁ ABIERTA AHORA',
+         ACCENT_GREEN,
+         [
+             'PIB venezolano creciendo 8-15%: la clase con poder adquisitivo se expande.',
+             'E-commerce venezolano +125% en 2025: el mercado digital ya existe y funciona.',
+             'Ningún competidor vende Turkesterona, NMN, Glutatión ni Longevity Coffee en Venezuela.',
+             'En 12–18 meses habrá copias. El que entra primero gana el mercado y la marca.',
+             'El momento no es "pronto" — el momento es AHORA.',
+         ]),
+        ('2. PRODUCTO SIN RIVAL — EL LONGEVITY COFFEE CAMBIA TODO',
+         ACCENT_GOLD,
+         [
+             'El Longevity Coffee 10-in-1 ($49–55 / 30 días, $1.67/día) no existe en Venezuela.',
+             'NMN + Glutatión + 8 vitaminas + café premium: nadie más tiene esto.',
+             'Se vende solo: "mejora tu café de la mañana" es el pitch más fácil del mundo.',
+             'Dos mercados con un producto: hombres fitness (energía+músculo) y mujeres 30-50 (antiaging+piel).',
+             'El formato café elimina la barrera del "no tomo suplementos" — lo que bebe ya es café.',
+         ]),
+        ('3. MODELO DE BAJO RIESGO — INVERSIÓN MÍNIMA, RETORNO RÁPIDO',
+         BLUE_ACCENT,
+         [
+             'Inversión inicial viable desde $2,000–5,000 USD (vs. miles de dólares en retail físico).',
+             'Modelo casillero/D2C: sin inventario forzoso, sin local, sin empleados al inicio.',
+             'Break-even en 60–90 días vendiendo solo 40–70 unidades.',
+             'Margen bruto real del 50–60% por unidad — de los más altos en el sector.',
+             'Si no funciona en 90 días: pérdida máxima < $3,000 USD. Riesgo asimétrico a favor.',
+         ]),
+        ('4. VENTAJA CULTURAL ÚNICA — LOS FUNDADORES SON LATINOS',
+         PURPLE,
+         [
+             'CEO Antonio Colmenares, CMO José Loreto Arismendi: nombres venezolanos/latinos.',
+             'La empresa está en Hialeah, Miami — la ciudad más venezolana de EE.UU.',
+             'Eso abre puertas para negociar distribución exclusiva que un gringo no obtendría.',
+             'Para el consumidor venezolano: "marca americana creada por latinos para latinos".',
+             'Es una historia poderosa que genera conexión emocional — el mejor marketing posible.',
+         ]),
+        ('5. PROYECCIÓN FINANCIERA — CAMINO REAL A 6–7 CIFRAS',
+         ACCENT_GREEN,
+         [
+             'Año 1 escenario realista: $48,000–76,800 USD en ventas → ~$30,000 USD neto.',
+             'Año 2 con escala: $150,000–255,000 USD anuales con distribución nacional.',
+             'Acuerdo exclusivo BFS × Venezuela: potencial de $500K+ anuales en 3–4 años.',
+             'El mercado LATAM de suplementos crece 8.6% anual hasta 2035 → $4.8B total.',
+             'El que posiciona BFS en Venezuela hoy, puede ser el distribuidor oficial de toda LATAM.',
+         ]),
+    ]
+
+    for title, color, points in verdicts:
+        story.append(Spacer(1, 0.2*cm))
+        story.append(Paragraph(f'<font color="#{color.hexval()[2:]}"><b>{title}</b></font>', S['h3']))
+        for point in points:
+            story.append(Paragraph(f'    ✓  {point}', S['bullet']))
+
+    story.append(Spacer(1, 0.5*cm))
+    story.append(HRFlowable(width=W, thickness=1.5, color=ACCENT_GREEN))
+    story.append(Spacer(1, 0.3*cm))
+
+    story.append(Paragraph('El Único Riesgo Real y Cómo Neutralizarlo', S['h2']))
+    story.append(Paragraph(
+        'El riesgo #1 es Venezuela: inestabilidad política, cambios regulatorios o '
+        'deterioro económico. Sin embargo, el modelo de negocio propuesto — 100% digital, '
+        'D2C, sin activos físicos locales, pagos en USD — lo neutraliza casi completamente. '
+        'Si el país se deteriora, simplemente pausas los pedidos y no pierdes inventario. '
+        'No hay local que cerrar, no hay empleados que liquidar, no hay deuda. '
+        'Este es un negocio estructuralmente resiliente para operar en mercados volátiles.',
+        S['body']))
+
+    story.append(Spacer(1, 0.3*cm))
+    story.append(Paragraph('Tabla de Decisión Final', S['h2']))
+
+    decision_data = [
+        ['CRITERIO', 'EVALUACIÓN', 'PUNTUACIÓN'],
+        ['Tamaño del mercado objetivo', '8–9 millones de personas con poder adquisitivo', '9/10'],
+        ['Crecimiento del mercado', '+125% e-commerce, +8–15% PIB, fitness en alza', '10/10'],
+        ['Competencia actual', 'Prácticamente nula en el nicho de BFS', '10/10'],
+        ['Barrera de entrada', 'Baja — modelo digital, $2–5K inversión inicial', '9/10'],
+        ['Margen de ganancia', '50–60% bruto — top tier del sector', '9/10'],
+        ['Riesgo del país', 'Moderado-alto — mitigado por modelo digital', '5/10'],
+        ['Potencial de escala', 'LATAM completa en 3–5 años', '10/10'],
+        ['Ventaja competitiva', 'Conexión latina fundadores + producto único', '10/10'],
+        ['Facilidad de ejecución', 'Instagram + WhatsApp — lo conoces', '8/10'],
+        ['PUNTUACIÓN TOTAL', 'Decisión: PROCEDER', '80/90 = 89%'],
+    ]
+    tbl = dark_table(decision_data, [5*cm, 6*cm, W-11*cm], header_color=ACCENT_GOLD)
+    story.append(tbl)
+
+    story.append(Spacer(1, 0.5*cm))
+
+    # Final verdict box
+    verdict_row = [[
+        Paragraph(
+            '<font color="#FFD700"><b>VEREDICTO FINAL</b></font><br/><br/>'
+            '<font color="#00FF88" size="14"><b>PROCEDER CON CONFIANZA.</b></font><br/><br/>'
+            '<font color="#B0B0C0" size="9">'
+            'Venezuela en 2026 ofrece una combinación única: mercado en crecimiento, '
+            'cero competencia en el nicho de BFS, modelo de entrada de bajo riesgo, '
+            'y un producto estrella (Longevity Coffee) diseñado para volverse viral. '
+            'Los fundadores son latinos. La logística Miami-Venezuela es directa. '
+            'El e-commerce creció 125%. El fitness está en auge. '
+            'No hay otro momento mejor. Cada mes que pasa es una oportunidad que se pierde.'
+            '</font>',
+            S['body_white'])
+    ]]
+    verdict_tbl = Table(verdict_row, colWidths=[W])
+    verdict_tbl.setStyle(TableStyle([
+        ('BACKGROUND', (0,0), (-1,-1), HexColor('#0D1A0D')),
+        ('BOX', (0,0), (-1,-1), 2, ACCENT_GOLD),
+        ('TOPPADDING', (0,0), (-1,-1), 20),
+        ('BOTTOMPADDING', (0,0), (-1,-1), 20),
+        ('LEFTPADDING', (0,0), (-1,-1), 20),
+        ('RIGHTPADDING', (0,0), (-1,-1), 20),
+    ]))
+    story.append(verdict_tbl)
+
+    story.append(PageBreak())
+
+    # ══════════════════════════════════════════════════════════════════════════
     # ANEXO — FUENTES
     # ══════════════════════════════════════════════════════════════════════════
     story.append(SectionDivider('ANEXO  |  FUENTES Y REFERENCIAS', TEXT_MUTED))
@@ -1280,12 +1561,23 @@ def build_pdf(output_path):
     sources = [
         ('Black Forest Supplements', [
             'blackforestsupplements.com (sitio oficial)',
+            'Longevity Coffee: blackforestsupplements.com/products/longevity-mix-mocha-coffee-10-in-1',
+            'Longevity Coffee Amazon (ASIN B0GD2F7Q46): amazon.com/Black-Forest-Longevity-Glutathione-Polyphenol/',
+            'Longevity Coffee TikTok Shop: shop.tiktok.com/us/pdp/black-forest-longevity-mocha-coffee...',
             'Trustpilot: trustpilot.com/review/blackforestsupplements.com (182 reseñas)',
             'BBB: bbb.org/us/fl/hialeah/profile/.../the-black-forest-supplements-inc',
             'LinkedIn: Antonio Colmenares CEO, José Loreto Arismendi CMO, Vincenzo Passariello COO',
-            'Amazon: amazon.com/Black-Forest-Turkesterone... (ASIN B0CZPKBFB2)',
+            'Amazon Turkesterone: amazon.com/Black-Forest-Turkesterone... (ASIN B0CZPKBFB2)',
             'Faire Wholesale: faire.com/brand/b_gyq9phh3jj',
             'ZoomInfo: zoominfo.com/c/black-forest-supplements/1312842074',
+        ]),
+        ('Mercado Longevidad & NMN', [
+            'Future Market Insights: futuremarketinsights.com — NAD Precursor Supplements Market $876M (2025)',
+            'MarketsandMarkets: marketsandmarkets.com — Longevity Ingredients Market',
+            'NutraIngredients: nutraingredients.com — Cellular Health Next Big Trend (2025)',
+            'Gabelli: gabelli.com — The Longevity Boom: Opportunities in Anti-Aging',
+            'Rolling Stone: rollingstone.com — Best NMN Supplements (mainstream coverage)',
+            'HealthGenesis: healthgenesis.com — Longevity Supplements Trends 2025',
         ]),
         ('Mercado Global y LATAM', [
             'Future Market Insights: futuremarketinsights.com — Ventas sports nutrition LATAM',
